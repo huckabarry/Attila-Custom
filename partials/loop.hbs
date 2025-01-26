@@ -12,7 +12,9 @@
 					<i class="icon icon-star">{{> "icons/icon-star"}}</i>
 				</span>
 			{{/if}}
-			<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+			{{#if (ne title "(Untitled)")}} <!-- Check if title is NOT "(Untitled)" -->
+				<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+			{{/if}}
 			<span class="post-meta">
 				{{t "By"}}
 				{{authors separator=", "}}
