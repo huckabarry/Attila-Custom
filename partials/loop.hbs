@@ -3,7 +3,6 @@
 </div>
 
 {{#foreach posts visibility="all"}}
-
 <article class="{{post_class}}">
 	<div class="inner">
 		<div class="box post-box">
@@ -12,9 +11,11 @@
 					<i class="icon icon-star">{{> "icons/icon-star"}}</i>
 				</span>
 			{{/if}}
-			{{#unless (eq title "(Untitled)")}} <!-- Check if title is NOT "(Untitled)" -->
-				<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-			{{/unless}}
+			{{#if title}}
+				{{#if (not (match title "^\\(Untitled\\)$"))}} <!-- Check if title is NOT "(Untitled)" -->
+					<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+				{{/if}}
+			{{/if}}
 			<span class="post-meta">
 				{{t "By"}}
 				{{authors separator=", "}}
@@ -26,7 +27,6 @@
 		</div>
 	</div>
 </article>
-
 {{/foreach}}
 
 {{pagination}}
