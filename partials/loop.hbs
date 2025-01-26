@@ -11,11 +11,9 @@
 					<i class="icon icon-star">{{> "icons/icon-star"}}</i>
 				</span>
 			{{/if}}
-			{{#if title}}
-				{{#if (not (match title "^\\(Untitled\\)$"))}} <!-- Check if title is NOT "(Untitled)" -->
-					<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-				{{/if}}
-			{{/if}}
+			{{#unless title "(Untitled)"}} <!-- Render only if title is NOT "(Untitled)" -->
+				<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
+			{{/unless}}
 			<span class="post-meta">
 				{{t "By"}}
 				{{authors separator=", "}}
