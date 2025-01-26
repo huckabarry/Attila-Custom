@@ -14,10 +14,10 @@
 			{{/if}}
 			<!-- Display the title only if it exists and is not "Untitled" -->
 		        {{#if title}}
-		            {{#unless (match title "^Untitled$")}}
-		                <h3 class="gh-card-title is-title">{{title}}</h3>
-		            {{/unless}}
-		        {{/if}}
+			    {{#unless title "Untitled"}}
+			        <h3 class="gh-card-title is-title">{{title}}</h3>
+			    {{/unless}}
+			{{/if}}
 			<span class="post-meta">
 				{{t "By"}}
 				{{authors separator=", "}}
