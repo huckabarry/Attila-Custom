@@ -13,8 +13,8 @@
 				</span>
 			{{/if}}
 			<!-- Display the title only if it exists and is not "Untitled" -->
-		        {{#if title}}
-			    {{#unless title "Untitled"}}
+		       {{#if title}}
+			    {{#unless (match title "Untitled")}}
 			        <h3 class="gh-card-title is-title">{{title}}</h3>
 			    {{/unless}}
 			{{/if}}
