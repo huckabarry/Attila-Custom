@@ -11,9 +11,6 @@
 					<i class="icon icon-star">{{> "icons/icon-star"}}</i>
 				</span>
 			{{/if}}
-			{{#if (not (eq title "(Untitled)"))}} <!-- Check if title is NOT "(Untitled)" -->
-				<h2 class="post-title"><a href="{{url}}">{{{title}}}</a></h2>
-			{{/if}}
 			<span class="post-meta">
 				{{t "By"}}
 				{{authors separator=", "}}
@@ -21,7 +18,7 @@
 				{{t "on"}}
 				<time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time>
 			</span>
-			<p class="post-excerpt">{{excerpt}}&hellip;</p>
+			<p class="post-excerpt">{{content}}&hellip;</p>
 		</div>
 	</div>
 </article>
