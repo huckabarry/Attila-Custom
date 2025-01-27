@@ -17,10 +17,12 @@
 				{{t "By"}}
 				{{authors separator=", "}}
 				{{#primary_tag}}{{t "in"}} <a class="post-meta-tag" href="{{url}}">{{name}}</a>{{/primary_tag}}
-				{{t "on"}}
-				<a href="{{url}}"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></a>
 			</span>
 			<p class="post-excerpt">{{excerpt}}&hellip;</p>
+			<span class="post-meta">
+				{{t "→"}}
+				<a href="{{url}}"><time datetime="{{date format='DD-MM-YYYY'}}">{{date format="DD MMM YYYY"}}</time></a>
+			</span>
 		</div>
 	</div>
 </article>
